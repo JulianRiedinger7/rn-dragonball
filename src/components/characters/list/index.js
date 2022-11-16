@@ -5,6 +5,7 @@ import Character from '../single';
 
 const CharacterList = () => {
 	const { data, loading } = useCharactersFetch();
+	const numColumns = 2;
 
 	const renderItem = ({ item }) => <Character item={item} />;
 
@@ -15,7 +16,8 @@ const CharacterList = () => {
 			) : (
 				<FlatList
 					data={data}
-					keyExtractor={(item) => item.id}
+					keyExtractor={(item) => item.name}
+					numColumns={numColumns}
 					renderItem={renderItem}
 				/>
 			)}

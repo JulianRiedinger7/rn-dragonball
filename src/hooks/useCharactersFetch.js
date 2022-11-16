@@ -12,7 +12,7 @@ export const useCharactersFetch = () => {
 			.then((res) => setData(res.characters))
 			.catch((err) => console.warn(err))
 			.finally(() => setLoading(false));
-	});
+	}, []);
 
 	return { data, loading };
 };

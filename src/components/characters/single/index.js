@@ -1,10 +1,10 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import images from '../../../constants/images';
 
 const Character = ({ item }) => {
 	return (
-		<View className="items-center w-screen my-5 rounded-md">
+		<TouchableOpacity className="items-center w-44 m-5 rounded-md">
 			<View className="bg-orange-400 rounded-lg ">
 				<Image
 					source={images[item.id]}
@@ -15,7 +15,7 @@ const Character = ({ item }) => {
 			<Text className="mt-1 text-2xl font-medium text-white uppercase">
 				{item.name}
 			</Text>
-		</View>
+		</TouchableOpacity>
 	);
 };
 

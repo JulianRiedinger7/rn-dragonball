@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, ImageBackground, View } from 'react-native';
-import { CharacterList } from './components';
+import { CharacterList, Featured } from './components';
 
 export default function App() {
 	return (
@@ -11,12 +11,13 @@ export default function App() {
 			resizeMode="cover"
 			className="flex-1"
 		>
-			<View className="items-center flex-1 pt-10 ">
+			<View className="flex-1 pt-10 ">
 				<Image
 					source={require('../assets/dragonballLogo.png')}
-					className="w-32 h-32"
+					className="w-32 h-32 mx-auto"
 					style={{ resizeMode: 'contain' }}
 				/>
+				<Featured />
 
 				<CharacterList />
 
