@@ -1,10 +1,16 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import images from '../../../constants/images';
+import { useCharacterContext } from '../../../context/CharacterContext';
 
 const Character = ({ item }) => {
+	const { changeActiveCharacter } = useCharacterContext();
+
 	return (
-		<TouchableOpacity className="items-center w-44 m-5 rounded-md">
+		<TouchableOpacity
+			className="items-center w-44 m-5 rounded-md"
+			onPress={() => changeActiveCharacter(item)}
+		>
 			<View className="bg-orange-400 rounded-lg ">
 				<Image
 					source={images[item.id]}
