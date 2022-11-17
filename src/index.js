@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ImageBackground, Text, View } from 'react-native';
-import { CharacterList, Featured } from './components';
+import { ImageBackground, View } from 'react-native';
+import { Header } from './components';
 import { CharacterProvider } from './context/CharacterContext';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Home } from './screens';
 
 export default function App() {
 	return (
@@ -15,19 +15,8 @@ export default function App() {
 				className="flex-1"
 			>
 				<View className="flex-1 pt-10 ">
-					<View className="flex-row items-center justify-between px-4">
-						<MaterialCommunityIcons name="menu-open" size={50} color="white" />
-						<Image
-							source={require('../assets/dragonballLogo.png')}
-							className="w-32 h-32 mx-auto"
-							style={{ resizeMode: 'contain' }}
-						/>
-						<Text className="text-white font-bold italic">JR 2022</Text>
-					</View>
-					<Featured />
-
-					<CharacterList />
-
+					<Header />
+					<Home />
 					<StatusBar style="light" />
 				</View>
 			</ImageBackground>

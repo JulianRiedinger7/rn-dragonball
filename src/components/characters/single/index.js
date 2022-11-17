@@ -8,7 +8,7 @@ const Character = ({ item }) => {
 
 	return (
 		<TouchableOpacity
-			className="items-center w-44 m-5 rounded-md"
+			className="items-center m-5 rounded-md w-44"
 			onPress={() => changeActiveCharacter(item)}
 		>
 			<View className="bg-orange-400 rounded-lg ">
@@ -18,7 +18,7 @@ const Character = ({ item }) => {
 					className="-translate-y-6 h-44 w-44"
 				/>
 			</View>
-			<Text className="mt-1 text-2xl font-medium text-white uppercase">
+			<Text className="mt-1 text-2xl font-bold text-white uppercase">
 				{item.name}
 			</Text>
 		</TouchableOpacity>

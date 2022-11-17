@@ -5,16 +5,14 @@ import { useState } from 'react';
 const CharacterContext = createContext();
 
 export const CharacterProvider = ({ children }) => {
-	const { loading, data } = useCharactersFetch();
-	const [activeCharacter, setActiveCharacter] = useState();
+	const { data } = useCharactersFetch();
+	const [activeCharacter, setActiveCharacter] = useState(null);
 
 	useEffect(() => {
 		setActiveCharacter(data[0]);
 	}, [data]);
 
 	const changeActiveCharacter = (item) => setActiveCharacter(item);
-
-	console.log(activeCharacter);
 
 	return (
 		<CharacterContext.Provider
