@@ -9,7 +9,7 @@ import React from 'react';
 import images from '../../constants/images';
 import { useCharacterContext } from '../../context/CharacterContext';
 
-const Featured = () => {
+const Featured = ({ onHandleInfo }) => {
 	const { activeCharacter } = useCharacterContext();
 
 	return (
@@ -33,7 +33,10 @@ const Featured = () => {
 					<Text className="text-lg text-white ">
 						{activeCharacter.bio.slice(0, 88)}...
 					</Text>
-					<TouchableOpacity className="self-center p-2 text-white bg-yellow-300 rounded-full">
+					<TouchableOpacity
+						className="self-center p-2 text-white bg-yellow-300 rounded-full"
+						onPress={onHandleInfo}
+					>
 						<Text className="text-lg font-bold text-white">More info</Text>
 					</TouchableOpacity>
 				</View>

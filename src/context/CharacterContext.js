@@ -16,7 +16,10 @@ export const CharacterProvider = ({ children }) => {
 
 	return (
 		<CharacterContext.Provider
-			value={{ activeCharacter, changeActiveCharacter }}
+			value={{
+				activeCharacter,
+				changeActiveCharacter,
+			}}
 		>
 			{children}
 		</CharacterContext.Provider>

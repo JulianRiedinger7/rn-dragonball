@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { ImageBackground, View } from 'react-native';
 import { Header } from './components';
 import { CharacterProvider } from './context/CharacterContext';
-import { Home } from './screens';
+import { Home, Info } from './screens';
 
 export default function App() {
+	const [infoPressed, setInfoPressed] = useState(false);
+
+	const onHandleInfo = () => setInfoPressed(!infoPressed);
+
 	return (
 		<CharacterProvider>
 			<ImageBackground
@@ -16,7 +21,11 @@ export default function App() {
 			>
 				<View className="flex-1 pt-10 ">
 					<Header />
-					<Home />
+					{infoPressed ? (
+						<Info onHandleInfo={onHandleInfo} />
+					) : (
+						<Home onHandleInfo={onHandleInfo} />
+					)}
 					<StatusBar style="light" />
 				</View>
 			</ImageBackground>

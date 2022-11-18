@@ -1,10 +1,10 @@
 import React from 'react';
 import { CharacterList, Featured } from '../../components';
 
-const Home = () => {
+const Home = ({ onHandleInfo }) => {
 	return (
 		<>
-			<Featured />
+			<Featured onHandleInfo={onHandleInfo} />
 			<CharacterList />
 		</>
 	);
