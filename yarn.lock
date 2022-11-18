@@ -3100,7 +3100,7 @@
   dependencies:
     "uuid" "^3.4.0"
 
-"expo-font@~11.0.1":
+"expo-font@^11.0.1", "expo-font@~11.0.1":
   "integrity" "sha512-LGAIluWZfru0J0n87dzb6pwAB6TVMTEiLcsd/ktozzbn4DlN7SeQy40+ruU6bvAKCOGrnRneYbKSIOGkrd7oNg=="
   "resolved" "https://registry.npmjs.org/expo-font/-/expo-font-11.0.1.tgz"
   "version" "11.0.1"

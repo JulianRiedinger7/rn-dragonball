@@ -18,7 +18,10 @@ const Character = ({ item }) => {
 					className="-translate-y-6 h-44 w-44"
 				/>
 			</View>
-			<Text className="mt-1 text-2xl font-bold text-white uppercase">
+			<Text
+				className="mt-1 text-3xl text-white uppercase"
+				style={{ fontFamily: 'Bebas-Neue' }}
+			>
 				{item.name}
 			</Text>
 		</TouchableOpacity>

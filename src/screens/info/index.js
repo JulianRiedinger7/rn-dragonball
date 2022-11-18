@@ -9,10 +9,15 @@ const Info = ({ onHandleInfo }) => {
 	return (
 		<ScrollView className="px-10">
 			<TouchableOpacity
-				className="bg-yellow-300 p-5 rounded-full w-32 self-end"
+				className="bg-yellow-300 py-3 px-5 rounded-full self-end"
 				onPress={onHandleInfo}
 			>
-				<Text className="text-white text-lg text-center font-bold">Back</Text>
+				<Text
+					className="text-white text-xl text-center"
+					style={{ fontFamily: 'Bebas-Neue' }}
+				>
+					Back
+				</Text>
 			</TouchableOpacity>
 			<Image
 				source={images[activeCharacter['id']]}
@@ -22,7 +27,10 @@ const Info = ({ onHandleInfo }) => {
 			<Text className="text-yellow-300 text-3xl font-bold">
 				{activeCharacter.race}
 			</Text>
-			<Text className="text-white font-bold text-5xl uppercase">
+			<Text
+				className="text-white text-7xl uppercase"
+				style={{ fontFamily: 'Bebas-Neue' }}
+			>
 				{activeCharacter.name}
 			</Text>
 			<Text className="text-white leading-5 font-semibold">

@@ -26,7 +26,10 @@ const Featured = ({ onHandleInfo }) => {
 					<Text className="text-3xl font-semibold text-yellow-300">
 						{activeCharacter.race}
 					</Text>
-					<Text className="text-5xl font-bold text-white uppercase">
+					<Text
+						className="text-7xl text-white uppercase"
+						style={{ fontFamily: 'Bebas-Neue' }}
+					>
 						{activeCharacter.name}
 					</Text>
 
@@ -37,7 +40,12 @@ const Featured = ({ onHandleInfo }) => {
 						className="self-center p-2 text-white bg-yellow-300 rounded-full"
 						onPress={onHandleInfo}
 					>
-						<Text className="text-lg font-bold text-white">More info</Text>
+						<Text
+							className="text-xl px-4 text-white"
+							style={{ fontFamily: 'Bebas-Neue' }}
+						>
+							More info
+						</Text>
 					</TouchableOpacity>
 				</View>
 			)}

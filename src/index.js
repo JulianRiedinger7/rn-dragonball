@@ -1,14 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { ImageBackground, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { ActivityIndicator, ImageBackground, View } from 'react-native';
 import { Header } from './components';
 import { CharacterProvider } from './context/CharacterContext';
 import { Home, Info } from './screens';
 
 export default function App() {
 	const [infoPressed, setInfoPressed] = useState(false);
+	const [loaded] = useFonts({
+		'Bebas-Neue': require('../assets/fonts/BebasNeue-Regular.ttf'),
+	});
 
 	const onHandleInfo = () => setInfoPressed(!infoPressed);
+
+	if (!loaded)
+		return (
+			<ActivityIndicator
+				size={'large'}
+				className="flex-1 justify-center items-center"
+			/>
+		);
 
 	return (
 		<CharacterProvider>
