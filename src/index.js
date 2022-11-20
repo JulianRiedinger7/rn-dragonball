@@ -31,7 +31,7 @@ export default function App() {
 				resizeMode="cover"
 				className="flex-1"
 			>
-				<View className="flex-1 pt-10 ">
+				<View className="flex-1">
 					<Header />
 					{infoPressed ? (
 						<Info onHandleInfo={onHandleInfo} />

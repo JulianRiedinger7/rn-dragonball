@@ -3,13 +3,18 @@ import React from 'react';
 import images from '../../../constants/images';
 import { useCharacterContext } from '../../../context/CharacterContext';
 
-const Character = ({ item }) => {
+const Character = ({ item, handleSnapPress }) => {
 	const { changeActiveCharacter } = useCharacterContext();
+
+	const onHandlePress = () => {
+		changeActiveCharacter(item);
+		handleSnapPress(0);
+	};
 
 	return (
 		<TouchableOpacity
-			className="items-center m-5 rounded-md w-44"
-			onPress={() => changeActiveCharacter(item)}
+			className="items-center m-5 mx-auto rounded-md w-40"
+			onPress={onHandlePress}
 		>
 			<View className="bg-orange-400 rounded-lg ">
 				<Image
@@ -19,7 +24,7 @@ const Character = ({ item }) => {
 				/>
 			</View>
 			<Text
-				className="mt-1 text-3xl text-white uppercase"
+				className="mt-1 text-3xl text-black uppercase"
 				style={{ fontFamily: 'Bebas-Neue' }}
 			>
 				{item.name}

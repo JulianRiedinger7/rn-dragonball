@@ -21,13 +21,13 @@ const Featured = ({ onHandleInfo }) => {
 					<Image
 						source={images[activeCharacter['id']]}
 						style={{ resizeMode: 'contain' }}
-						className="w-80 h-80"
+						className="w-64 h-64"
 					/>
-					<Text className="text-3xl font-semibold text-yellow-300">
+					<Text className="text-2xl font-semibold text-yellow-300">
 						{activeCharacter.race}
 					</Text>
 					<Text
-						className="text-7xl text-white uppercase"
+						className="text-6xl text-white uppercase"
 						style={{ fontFamily: 'Bebas-Neue' }}
 					>
 						{activeCharacter.name}
