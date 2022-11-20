@@ -37,7 +37,7 @@ const Featured = ({ onHandleInfo }) => {
 						{activeCharacter.bio.slice(0, 88)}...
 					</Text>
 					<TouchableOpacity
-						className="self-center p-2 text-white bg-yellow-300 rounded-full"
+						className="self-center p-2 text-white bg-yellow-300 rounded-full mt-1"
 						onPress={onHandleInfo}
 					>
 						<Text
