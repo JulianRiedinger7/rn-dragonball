@@ -3,7 +3,6 @@
     "name": "rn-dragonball",
     "slug": "rn-dragonball",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/dragonballLogo.png",
     "userInterfaceStyle": "light",
     "splash": {

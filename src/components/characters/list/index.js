@@ -1,16 +1,25 @@
 import React, { useCallback, useRef } from 'react';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import {
+	ActivityIndicator,
+	Dimensions,
+	Pressable,
+	Text,
+	View,
+} from 'react-native';
 import { useCharactersFetch } from '../../../hooks/useCharactersFetch';
 import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import Character from '../single';
 
 const CharacterList = () => {
 	const { data, loading } = useCharactersFetch();
+
+	const { height } = Dimensions.get('screen');
+
 	const numColumns = 2;
 
 	const sheetRef = useRef(null);
 
-	const snapPoints = ['20%', '80%'];
+	const snapPoints = height <= 640 ? ['15%', '80%'] : ['20%', '80%'];
 
 	const handleSnapPress = useCallback((index) => {
 		sheetRef.current?.snapToIndex(index);
@@ -28,7 +37,7 @@ const CharacterList = () => {
 				<BottomSheet ref={sheetRef} snapPoints={snapPoints}>
 					<View className="flex-row justify-around mb-2">
 						<Pressable
-							className="bg-yellow-300 py-2 px-4 rounded-full self-center"
+							className="self-center px-4 py-2 bg-yellow-300 rounded-full"
 							onPress={() => handleSnapPress(1)}
 							title="View More"
 						>
@@ -40,7 +49,7 @@ const CharacterList = () => {
 							</Text>
 						</Pressable>
 						<Pressable
-							className="bg-yellow-300 py-2 px-4 rounded-full self-center"
+							className="self-center px-4 py-2 bg-yellow-300 rounded-full"
 							onPress={() => handleSnapPress(0)}
 							title="View More"
 						>

@@ -1,4 +1,11 @@
-import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
+import {
+	View,
+	Text,
+	TouchableOpacity,
+	Image,
+	ScrollView,
+	Dimensions,
+} from 'react-native';
 import React from 'react';
 import { useCharacterContext } from '../../context/CharacterContext';
 import images from '../../constants/images';
@@ -6,14 +13,16 @@ import images from '../../constants/images';
 const Info = ({ onHandleInfo }) => {
 	const { activeCharacter } = useCharacterContext();
 
+	const { width, height } = Dimensions.get('screen');
+
 	return (
 		<ScrollView className="px-10">
 			<TouchableOpacity
-				className="bg-yellow-300 py-3 px-5 rounded-full self-end"
+				className="self-end px-5 py-3 bg-yellow-300 rounded-full"
 				onPress={onHandleInfo}
 			>
 				<Text
-					className="text-white text-xl text-center"
+					className="text-xl text-center text-white"
 					style={{ fontFamily: 'Bebas-Neue' }}
 				>
 					Back
@@ -21,25 +30,28 @@ const Info = ({ onHandleInfo }) => {
 			</TouchableOpacity>
 			<Image
 				source={images[activeCharacter['id']]}
-				style={{ resizeMode: 'contain' }}
-				className="w-80 h-80"
+				style={{
+					resizeMode: 'contain',
+					height: height * 0.4,
+					width: width * 0.7,
+				}}
 			/>
-			<Text className="text-yellow-300 text-3xl font-bold">
+			<Text className="text-3xl font-bold text-yellow-300">
 				{activeCharacter.race}
 			</Text>
 			<Text
-				className="text-white text-7xl uppercase"
+				className="text-white uppercase text-7xl"
 				style={{ fontFamily: 'Bebas-Neue' }}
 			>
 				{activeCharacter.name}
 			</Text>
-			<Text className="text-white leading-5 font-semibold">
+			<Text className="text-lg font-semibold leading-6 text-white">
 				{activeCharacter.bio}
 			</Text>
 			<View className="my-5">
-				<Text className="text-yellow-300 text-3xl font-bold">Abilities: </Text>
+				<Text className="text-3xl font-bold text-yellow-300">Abilities: </Text>
 				{activeCharacter.abilities.map((ability, index) => (
-					<Text key={index} className="text-white text-lg font-semibold">
+					<Text key={index} className="text-lg font-semibold text-white">
 						{ability}
 					</Text>
 				))}
