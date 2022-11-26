@@ -1,33 +1,15 @@
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	Image,
-	ScrollView,
-	Dimensions,
-} from 'react-native';
+import { View, Text, Image, ScrollView, Dimensions } from 'react-native';
 import React from 'react';
 import { useCharacterContext } from '../../context/CharacterContext';
 import images from '../../constants/images';
 
-const Info = ({ onHandleInfo }) => {
+const Info = () => {
 	const { activeCharacter } = useCharacterContext();
 
 	const { width, height } = Dimensions.get('screen');
 
 	return (
 		<ScrollView className="px-10">
-			<TouchableOpacity
-				className="self-end px-5 py-3 bg-yellow-300 rounded-full"
-				onPress={onHandleInfo}
-			>
-				<Text
-					className="text-xl text-center text-white"
-					style={{ fontFamily: 'Bebas-Neue' }}
-				>
-					Back
-				</Text>
-			</TouchableOpacity>
 			<Image
 				source={images[activeCharacter['id']]}
 				style={{

@@ -1,24 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
 import { useFonts } from 'expo-font';
 import { ActivityIndicator, ImageBackground, View } from 'react-native';
-import { Header } from './components';
 import { CharacterProvider } from './context/CharacterContext';
-import { Home, Info } from './screens';
+import AppNavigator from './navigation/index';
 
 export default function App() {
-	const [infoPressed, setInfoPressed] = useState(false);
 	const [loaded] = useFonts({
 		'Bebas-Neue': require('../assets/fonts/BebasNeue-Regular.ttf'),
 	});
-
-	const onHandleInfo = () => setInfoPressed(!infoPressed);
 
 	if (!loaded)
 		return (
 			<ActivityIndicator
 				size={'large'}
-				className="flex-1 justify-center items-center"
+				className="items-center justify-center flex-1"
 			/>
 		);
 
@@ -31,15 +26,9 @@ export default function App() {
 				resizeMode="cover"
 				className="flex-1"
 			>
-				<View className="flex-1">
-					<Header />
-					{infoPressed ? (
-						<Info onHandleInfo={onHandleInfo} />
-					) : (
-						<Home onHandleInfo={onHandleInfo} />
-					)}
-					<StatusBar style="light" />
-				</View>
+				<StatusBar style="light" />
+
+				<AppNavigator />
 			</ImageBackground>
 		</CharacterProvider>
 	);

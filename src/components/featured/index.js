@@ -11,7 +11,7 @@ import images from '../../constants/images';
 import { useCharacterContext } from '../../context/CharacterContext';
 import { usePortrait } from '../../hooks/usePortrait';
 
-const Featured = ({ onHandleInfo }) => {
+const Featured = ({ navigation }) => {
 	const { activeCharacter } = useCharacterContext();
 	const { isPortrait } = usePortrait();
 
@@ -52,7 +52,7 @@ const Featured = ({ onHandleInfo }) => {
 						</Text>
 						<TouchableOpacity
 							className="self-center p-2 mt-1 text-white bg-yellow-300 rounded-full"
-							onPress={onHandleInfo}
+							onPress={() => navigation.navigate('Info')}
 						>
 							<Text
 								className="px-4 text-xl text-white"

@@ -1,19 +1,16 @@
-import { View, Text, Image } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Image, SafeAreaView } from 'react-native';
 
 import React from 'react';
 
 const Header = () => {
 	return (
-		<View className="flex-row items-center justify-between px-4">
-			<MaterialCommunityIcons name="menu-open" size={50} color="white" />
+		<SafeAreaView className="flex-row items-center justify-between px-4">
 			<Image
 				source={require('../../../assets/dragonballLogo.png')}
 				className="w-32 h-32 mx-auto"
 				style={{ resizeMode: 'contain' }}
 			/>
-			<Text className="italic font-bold text-white">JR 2022</Text>
-		</View>
+		</SafeAreaView>
 	);
 };
 

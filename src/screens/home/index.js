@@ -1,10 +1,11 @@
 import React from 'react';
-import { CharacterList, Featured } from '../../components';
+import { CharacterList, Featured, Header } from '../../components';
 
-const Home = ({ onHandleInfo }) => {
+const Home = ({ navigation }) => {
 	return (
 		<>
-			<Featured onHandleInfo={onHandleInfo} />
+			<Header />
+			<Featured navigation={navigation} />
 			<CharacterList />
 		</>
 	);
