@@ -6,7 +6,18 @@ const Stack = createNativeStackNavigator();
 
 const CharactersNavigator = () => {
 	return (
-		<Stack.Navigator initialRouteName="Characters">
+		<Stack.Navigator
+			initialRouteName="Characters"
+			screenOptions={{
+				contentStyle: {
+					backgroundColor: 'transparent',
+				},
+				headerStyle: {
+					backgroundColor: '#202020',
+				},
+				headerTintColor: '#fff',
+			}}
+		>
 			<Stack.Screen
 				options={{
 					headerShown: false,

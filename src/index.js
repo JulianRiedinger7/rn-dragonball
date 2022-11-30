@@ -27,7 +27,6 @@ export default function App() {
 				className="flex-1"
 			>
 				<StatusBar style="light" />
-
 				<AppNavigator />
 			</ImageBackground>
 		</CharacterProvider>
