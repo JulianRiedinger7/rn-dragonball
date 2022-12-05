@@ -1,32 +1,86 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Home, Info } from '../screens/index';
+import { CustomDrawer } from '../components';
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const CharactersNavigator = () => {
 	return (
-		<Stack.Navigator
-			initialRouteName="Characters"
+		<Drawer.Navigator
+			initialRouteName="Home"
+			drawerContent={(props) => <CustomDrawer {...props} />}
 			screenOptions={{
-				contentStyle: {
+				headerShown: false,
+				drawerActiveBackgroundColor: '#FBB40E',
+				drawerActiveTintColor: '#202020',
+				drawerInactiveTintColor: '#eaeaea',
+				drawerLabelStyle: {
+					marginLeft: -25,
+					fontSize: 16,
+					fontWeight: 'bold',
+				},
+				sceneContainerStyle: {
 					backgroundColor: 'transparent',
 				},
-				headerStyle: {
-					backgroundColor: '#202020',
-				},
-				headerTintColor: '#fff',
+				drawerType: 'slide',
 			}}
 		>
-			<Stack.Screen
-				options={{
-					headerShown: false,
-				}}
-				name="Characters"
+			<Drawer.Screen
+				name="Home"
 				component={Home}
+				options={{
+					drawerIcon: ({ color, focused }) => (
+						<Ionicons
+							name={focused ? 'home' : 'home-outline'}
+							size={30}
+							color={color}
+						/>
+					),
+				}}
 			/>
-			<Stack.Screen name="Info" component={Info} />
-		</Stack.Navigator>
+			<Drawer.Screen
+				name="Bio"
+				component={Info}
+				options={{
+					drawerIcon: ({ color, focused }) => (
+						<Ionicons
+							name={focused ? 'person' : 'person-outline'}
+							size={30}
+							color={color}
+						/>
+					),
+				}}
+			/>
+			<Drawer.Screen
+				name="Abilities"
+				component={Info}
+				options={{
+					drawerIcon: ({ color, focused }) => (
+						<MaterialCommunityIcons
+							name={focused ? 'shield-sword' : 'shield-sword-outline'}
+							size={30}
+							color={color}
+						/>
+					),
+				}}
+			/>
+			<Drawer.Screen
+				name="Attributes"
+				component={Info}
+				options={{
+					drawerIcon: ({ color, focused }) => (
+						<Ionicons
+							name={focused ? 'heart' : 'heart-outline'}
+							size={30}
+							color={color}
+						/>
+					),
+				}}
+			/>
+		</Drawer.Navigator>
 	);
 };
 

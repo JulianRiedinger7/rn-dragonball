@@ -1,17 +1,10 @@
-import {
-	View,
-	Text,
-	ActivityIndicator,
-	Image,
-	TouchableOpacity,
-	Dimensions,
-} from 'react-native';
+import { View, Text, ActivityIndicator, Image, Dimensions } from 'react-native';
 import React from 'react';
 import images from '../../constants/images';
 import { useCharacterContext } from '../../context/CharacterContext';
 import { usePortrait } from '../../hooks/usePortrait';
 
-const Featured = ({ navigation }) => {
+const Featured = () => {
 	const { activeCharacter } = useCharacterContext();
 	const { isPortrait } = usePortrait();
 
@@ -50,17 +43,6 @@ const Featured = ({ navigation }) => {
 						<Text className="text-lg text-white ">
 							{activeCharacter.bio.slice(0, 88)}...
 						</Text>
-						<TouchableOpacity
-							className="self-center p-2 mt-1 text-white bg-yellow-300 rounded-full"
-							onPress={() => navigation.navigate('Info')}
-						>
-							<Text
-								className="px-4 text-xl text-white"
-								style={{ fontFamily: 'Bebas-Neue' }}
-							>
-								More info
-							</Text>
-						</TouchableOpacity>
 					</View>
 				</View>
 			)}

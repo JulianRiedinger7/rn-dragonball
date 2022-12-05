@@ -35,33 +35,6 @@ const CharacterList = () => {
 				<ActivityIndicator size="large" />
 			) : (
 				<BottomSheet ref={sheetRef} snapPoints={snapPoints}>
-					<View className="flex-row justify-around mb-2">
-						<Pressable
-							className="self-center px-4 py-2 bg-yellow-300 rounded-full"
-							onPress={() => handleSnapPress(1)}
-							title="View More"
-						>
-							<Text
-								className="text-lg text-white uppercase"
-								style={{ fontFamily: 'Bebas-Neue' }}
-							>
-								View More
-							</Text>
-						</Pressable>
-						<Pressable
-							className="self-center px-4 py-2 bg-yellow-300 rounded-full"
-							onPress={() => handleSnapPress(0)}
-							title="View More"
-						>
-							<Text
-								className="text-lg text-white uppercase"
-								style={{ fontFamily: 'Bebas-Neue' }}
-							>
-								View Less
-							</Text>
-						</Pressable>
-					</View>
-
 					<BottomSheetFlatList
 						data={data}
 						keyExtractor={(item) => item.id}
