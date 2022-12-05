@@ -30,18 +30,14 @@ const Featured = () => {
 							flex: isPortrait ? 0 : 1,
 						}}
 					>
-						<Text className="text-2xl font-semibold text-yellow-300">
+						<Text className="text-4xl font-semibold text-yellow-300">
 							{activeCharacter.race}
 						</Text>
 						<Text
-							className="text-6xl text-white uppercase"
+							className="text-white uppercase text-7xl"
 							style={{ fontFamily: 'Bebas-Neue' }}
 						>
 							{activeCharacter.name}
-						</Text>
-
-						<Text className="text-lg text-white ">
-							{activeCharacter.bio.slice(0, 88)}...
 						</Text>
 					</View>
 				</View>

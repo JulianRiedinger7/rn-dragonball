@@ -1,6 +1,6 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Home, Info } from '../screens/index';
+import { Abilities, Attributes, Bio, Home, Info } from '../screens/index';
 import { CustomDrawer } from '../components';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -43,7 +43,7 @@ const CharactersNavigator = () => {
 			/>
 			<Drawer.Screen
 				name="Bio"
-				component={Info}
+				component={Bio}
 				options={{
 					drawerIcon: ({ color, focused }) => (
 						<Ionicons
@@ -56,7 +56,7 @@ const CharactersNavigator = () => {
 			/>
 			<Drawer.Screen
 				name="Abilities"
-				component={Info}
+				component={Abilities}
 				options={{
 					drawerIcon: ({ color, focused }) => (
 						<MaterialCommunityIcons
@@ -69,7 +69,7 @@ const CharactersNavigator = () => {
 			/>
 			<Drawer.Screen
 				name="Attributes"
-				component={Info}
+				component={Attributes}
 				options={{
 					drawerIcon: ({ color, focused }) => (
 						<Ionicons
