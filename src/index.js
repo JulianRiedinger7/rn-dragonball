@@ -1,8 +1,7 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import { ActivityIndicator, ImageBackground, View } from 'react-native';
-import { CharacterProvider } from './context/CharacterContext';
+import { ActivityIndicator, ImageBackground } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import AppNavigator from './navigation/index';
