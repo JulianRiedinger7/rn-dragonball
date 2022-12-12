@@ -5,7 +5,7 @@ const Home = ({ navigation }) => {
 	return (
 		<>
 			<Header />
-			<Featured navigation={navigation} />
+			<Featured />
 			<CharacterList />
 		</>
 	);

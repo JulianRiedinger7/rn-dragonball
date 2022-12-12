@@ -1,11 +1,11 @@
 import { View, Text, ActivityIndicator, Image, Dimensions } from 'react-native';
 import React from 'react';
 import images from '../../constants/images';
-import { useCharacterContext } from '../../context/CharacterContext';
 import { usePortrait } from '../../hooks/usePortrait';
+import { useSelector } from 'react-redux';
 
 const Featured = () => {
-	const { activeCharacter } = useCharacterContext();
+	const activeCharacter = useSelector((state) => state.character.active);
 	const { isPortrait } = usePortrait();
 
 	const { width, height } = Dimensions.get('screen');

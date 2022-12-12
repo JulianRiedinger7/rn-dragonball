@@ -1,10 +1,10 @@
 import { Text, ScrollView } from 'react-native';
-import { useCharacterContext } from '../../context/CharacterContext';
 import { Featured, Header } from '../../components/index';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Abilities = () => {
-	const { activeCharacter } = useCharacterContext();
+	const activeCharacter = useSelector((state) => state.character.active);
 
 	return (
 		<>

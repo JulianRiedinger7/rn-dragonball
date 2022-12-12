@@ -1,17 +1,11 @@
 import React, { useCallback, useRef } from 'react';
-import {
-	ActivityIndicator,
-	Dimensions,
-	Pressable,
-	Text,
-	View,
-} from 'react-native';
-import { useCharactersFetch } from '../../../hooks/useCharactersFetch';
+import { ActivityIndicator, Dimensions } from 'react-native';
 import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import Character from '../single';
+import { useSelector } from 'react-redux';
 
 const CharacterList = () => {
-	const { data, loading } = useCharactersFetch();
+	const data = useSelector((state) => state.character.characters);
 
 	const { height } = Dimensions.get('screen');
 
@@ -31,7 +25,7 @@ const CharacterList = () => {
 
 	return (
 		<>
-			{loading ? (
+			{!data ? (
 				<ActivityIndicator size="large" />
 			) : (
 				<BottomSheet ref={sheetRef} snapPoints={snapPoints}>

@@ -1,13 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { useCharacterContext } from '../../context/CharacterContext';
 import { Featured, Header } from '../../components';
-import { ScrollView } from 'react-native-gesture-handler';
 import { usePortrait } from '../../hooks/usePortrait';
+import { useSelector } from 'react-redux';
 
 const Attributes = () => {
-	const { activeCharacter } = useCharacterContext();
+	const activeCharacter = useSelector((state) => state.character.active);
 	const { isPortrait } = usePortrait();
 
 	return (

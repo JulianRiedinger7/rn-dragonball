@@ -1,19 +1,20 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { changeActive } from '../../../store/actions';
 import images from '../../../constants/images';
-import { useCharacterContext } from '../../../context/CharacterContext';
 
 const Character = ({ item, handleSnapPress }) => {
-	const { changeActiveCharacter } = useCharacterContext();
+	const dispatch = useDispatch();
 
 	const onHandlePress = () => {
-		changeActiveCharacter(item);
+		dispatch(changeActive(item));
 		handleSnapPress(0);
 	};
 
 	return (
 		<TouchableOpacity
-			className="items-center m-5 mx-auto rounded-md w-40"
+			className="items-center w-40 m-5 mx-auto rounded-md"
 			onPress={onHandlePress}
 		>
 			<View className="bg-orange-400 rounded-lg ">

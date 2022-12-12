@@ -1,10 +1,10 @@
-import { View, Text, ScrollView } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import React from 'react';
 import { Featured, Header } from '../../components';
-import { useCharacterContext } from '../../context/CharacterContext';
+import { useSelector } from 'react-redux';
 
 const Bio = () => {
-	const { activeCharacter } = useCharacterContext();
+	const activeCharacter = useSelector((state) => state.character.active);
 
 	return (
 		<>
