@@ -1,14 +1,26 @@
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, Alert } from 'react-native';
 import React from 'react';
 import {
 	DrawerContentScrollView,
 	DrawerItemList,
 } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { auth } from '../../constants';
+import { signOut } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { userSignOut } from '../../store/actions';
 
 const CustomDrawer = (props) => {
-	const navigation = useNavigation();
+	const dispatch = useDispatch();
+
+	const onHandleSignOut = async () => {
+		try {
+			await signOut(auth);
+			dispatch(userSignOut());
+		} catch (error) {
+			Alert.alert(error.message);
+		}
+	};
 
 	return (
 		<View className="flex-1 bg-orange-400">
@@ -22,7 +34,7 @@ const CustomDrawer = (props) => {
 			</DrawerContentScrollView>
 			<Pressable
 				className="flex-row items-center justify-end p-5 border-t"
-				onPress={() => navigation.goBack()}
+				onPress={onHandleSignOut}
 			>
 				<Text className="mr-2 text-lg font-bold">Exit</Text>
 				<Ionicons name="ios-exit-outline" size={30} color="black" />
